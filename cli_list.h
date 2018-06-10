@@ -28,6 +28,3 @@ int cli_list_count(clist_t *list);
 bool cli_list_add(clist_t *list, client_t client);
 bool cli_list_remove(clist_t *list, int id);
 client_t * cli_list_get(clist_t *list, int id);
-
-// Outras
-void* process_message(void* arg);
