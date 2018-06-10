@@ -22,6 +22,11 @@
 clist_t *clist;
 int count = 0;
 
+
+/*
+* Envia mensagem para todos os clientes
+* conectados, exceto para o remetente
+*/
 void send_message(char *str, int id_sender)
 {
     int i;
@@ -35,9 +40,9 @@ void send_message(char *str, int id_sender)
 }
 
 /*
-* Processa as mensagens recebidas do client através da função recv()
+* Recebe e processa mensagens do client
 * É executado em uma thread.
-* Para cada client conectado, um fork da thread é criado
+* Para cada client conectado, uma thread individual executará esta função
 */
 void* process_message(void* arg)
 {
